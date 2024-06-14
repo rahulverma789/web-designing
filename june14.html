@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="confirm('Are you 18+ ?')">
+    <button onclick="alert('Hello')">OK</button>
+    <button ondblclick="alert('Hello Hello')">OK</button>
+    
+    <p onmouseover="this.style.cursor = 'pointer'">Rahul</p>
+    <p onmouseout="this.style.background = 'yellow'">Rahul</p>
+    
+    <form action="" onsubmit="confirm('Do you want to submit it?')">
+        Name : <input type="text" onfocus="this.style.background = 'cyan'" onblur="this.style.background = 'pink'">
+        DOB : <input type="date" onchange="this.style.background = 'red'">
+        <input type="submit">
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name : <input type="text" id="name" onblur="xyz()">
+    <p id="out"></p>
+    <script>
+        function xyz() {
+            var name = document.getElementById('name').value;
+            document.getElementById('out').innerHTML = name;
+        }
+    </script>
+</body>
+</html>
