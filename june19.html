@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="validate(); return false">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname">
+        <span id="fnameError" class="red"></span>
+        <br><br>
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname">
+        <span id="lnameError" class="red"></span>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError" class="red"></span>
+        <br><br>
+        <label for="uid">User Id:</label>
+        <input type="text" id="uid" name="uid">
+        <span id="uidError" class="red"></span>
+        <br><br>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="pass">
+        <span id="passError" class="red"></span>
+        <br><br>
+        <label for="cpass">Confirm Password:</label>
+        <input type="password" id="cpass" name="cpass">
+        <span id="cpassError" class="red"></span>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <script>
+        function validate(){
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var uid = document.getElementById('uid').value;
+            var pass = document.getElementById('pass').value;
+            var cpass = document.getElementById('cpass').value;
+
+            if(fname === ""){
+                document.getElementById('fnameError').innerHTML = "Please enter First Name";
+            }
+
+            if(lname === ""){
+                document.getElementById('lnameError').innerHTML = "Please enter Last Name";
+            }
+
+            if(email === ""){
+                document.getElementById('emailError').innerHTML = "Please enter Email";
+            }
+            else if(!(/\S+@\S+\.\S+/).test(email)){
+                document.getElementById('emailError').innerHTML = "Please enter valid Email";
+            }
+
+            if(uid === ""){
+                document.getElementById('uidError').innerHTML = "Please enter Username";
+            }
+
+            if(pass === ""){
+                document.getElementById('passError').innerHTML = "Please enter password";
+            }
+
+            if(cpass === ""){
+                document.getElementById('cpassError').innerHTML = "Please confirm password";
+            }
+            else if(pass !== cpass){
+                document.getElementById('cpassError').innerHTML = "Passwords do not match";
+            }
+        }
+    </script>
+</body>
+</html>
